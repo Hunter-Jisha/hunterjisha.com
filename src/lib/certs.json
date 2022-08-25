@@ -1,0 +1,32 @@
+[
+    {
+        "icon": "tdlr.png",
+        "name": "Apprentice Electrician License",
+        "gotten": "September 2021"
+    },
+    {
+        "icon": "google.png",
+        "name": "Digital Marketing Certification",
+        "gotten": "August 2021"
+    },
+    {
+        "icon": "w3.png",
+        "name": "W3 Certified HTML Developer",
+        "gotten": "August 2021"
+    },
+    {
+        "icon": "sei.png",
+        "name": "SEI Renewable Energy Certification",
+        "gotten": "July 2021"
+    },
+    {
+        "icon": "aws.png",
+        "name": "AWS Certified Developer",
+        "gotten": null
+    },
+    {
+        "icon": "comptia.png",
+        "name": "CompTIA Security+",
+        "gotten": null
+    }
+]
