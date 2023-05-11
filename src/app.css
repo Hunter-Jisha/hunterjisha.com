@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: SFProBold;
+    src: url("fonts/SF-Pro-Text-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFPro;
+    src: url("fonts/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProLight;
+    src: url("fonts/SF-Pro-Text-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: SFProBlack;
+    src: url("fonts/SF-Pro-Display-Black.otf") format("opentype");
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
