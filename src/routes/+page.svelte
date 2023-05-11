@@ -5,8 +5,9 @@
     import IPadNewsWidget from "../lib/IPadNewsWidget.svelte";
     import IPadTimeAndDateWidget from "../lib/IPadTimeAndDateWidget.svelte";
     import IPadUpNextWidget from "../lib/IPadUpNextWidget.svelte";
-    import { notes, appStore } from "../lib/appVisibility"
+    import { notes, appStore, maps } from "../lib/appVisibility"
     import AppStore from "../lib/apps/AppStore.svelte";
+    import Maps from "../lib/apps/Maps.svelte";
     import Notes from "../lib/apps/Notes.svelte";
 </script>
 
@@ -44,26 +45,27 @@
             <div class="w-full flex flex-row gap-24 flex-wrap content-start" >
                 <AppIcon onclick={() => appStore.set(true)} iconPath="/appIcons/store.png" name="Projects"/>
                 <AppIcon onclick={() => notes.set(true)} iconPath="/appIcons/notes.png" name="About Me"/>
-                <AppIcon iconPath="/appIcons/findmy.png" name="Find Me"/>
-                <AppIcon iconPath="/appIcons/github.png" name="Github"/>
-                <AppIcon iconPath="/appIcons/linkedin.png" name="LinkedIn"/>
+                <AppIcon onclick={() => maps.set(true)} iconPath="/appIcons/findmy.png" name="Find Me"/>
+                <AppIcon onclick={() => window.open("https://github.com/hunter-jisha", '_blank')} iconPath="/appIcons/github.png" name="Github"/>
+                <AppIcon onclick={() => window.open("https://www.linkedin.com/in/ceo-of-software-engineering/", '_blank')} iconPath="/appIcons/linkedin.png" name="LinkedIn"/>
                 <AppIcon iconPath="/appIcons/books.png" name="Education"/>
-                <AppIcon iconPath="appIcons/email.png" name="Email Me"/>
-                <AppIcon iconPath="appIcons/phone.png" name="Call Me"/>
-                <AppIcon iconPath="appIcons/messages.png" name="Text Me"/>
+                <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.png" name="Email Me"/>
+                <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.png" name="Call Me"/>
+                <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.png" name="Text Me"/>
             </div>
         </div>
 
         <!--Bottom Bar-->
         <div class="flex-shrink-0 flex flex-row p-4 bg-white bg-opacity-30 backdrop-blur-md rounded-3xl gap-4 mb-6">
-            <AppIcon iconPath="appIcons/email.png"/>
-            <AppIcon iconPath="appIcons/phone.png"/>
-            <AppIcon iconPath="appIcons/messages.png"/>
+            <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.png"/>
+            <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.png"/>
+            <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.png"/>
         </div>
     </div>
 
     <HomeButton/>
     <Alert/>
+    <Maps/>
 
     <!--Apps-->
     <Notes/>

@@ -65,6 +65,26 @@
                     </div>
                 </div>  
             </div>
+
+            <div class="relative col-span-2 row-span-3 flex flex-col rounded-3xl justify-end gap-4 overflow-hidden">
+                <!--Background- Image-->
+                <img class="absolute top-0 left-0 w-full h-full object-cover" src="websiteScreenshot.png" alt="syntext"/>
+
+                <div class="w-full flex p-4 flex-row backdrop-blur-md bg-black bg-opacity-10 gap-4 items-center">
+                    <div class="h-16 aspect-square bg-white rounded-2xl flex items-center justify-center p-3">
+                        <img src="HJ.png" alt="syntext"/>
+                    </div>
+
+                    <div class="flex flex-col h-full">
+                        <p class="text-white font-bold text-lg">HunterJisha.com</p>
+                        <p class="text-white font-light">Website</p>
+                    </div>
+
+                    <div class="ml-auto h-10 aspect-square text-white -rotate-90">
+                        <Chevron/>
+                    </div>
+                </div>  
+            </div>
         </div>
     </div>
 {/if}
