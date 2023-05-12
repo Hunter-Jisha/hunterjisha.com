@@ -1,6 +1,6 @@
 <div class="w-full flex flex-col p-4 bg-white bg-opacity-30 backdrop-blur-md rounded-2xl gap-4">
     <div class="flex flex-row h-6 gap-4 items-center">
-        <img class="h-full aspect-square rounded-[5px]" src="appIcons/news.png" alt="news">
+        <img class="h-full aspect-square rounded-[5px]" src="appIcons/news.webp" alt="news">
         <p class="font-light text-lg text-stone-600">NEWS</p>
     </div>
 
