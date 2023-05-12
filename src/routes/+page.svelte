@@ -25,7 +25,7 @@
     <!--Main Container-->
     <div class="absolute w-full h-full top-0 left-0 flex flex-col py-2 px-4 items-center">
         <!--Top Bar-->
-        <div class="w-full h-10 flex flex-row justify-end items-center gap-4">
+        <div class="w-full h-6 md:h-10 flex flex-row justify-end items-center gap-2 md:gap-4">
             <img class="filter invert h-[60%] aspect-square" src="wifi.png" alt="wifi"/>
             <img class="filter invert h-full aspect-square" src="battery.png" alt="battery"/>
         </div>
