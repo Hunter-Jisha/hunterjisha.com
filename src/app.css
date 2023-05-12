@@ -23,6 +23,16 @@
     src: url("fonts/SF-Pro-Display-Black.otf") format("opentype");
 }
 
+@font-face {
+    font-family: NewYork;
+    src: url("fonts/NewYorkMedium-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: NewYorkBold;
+    src: url("fonts/NewYorkMedium-Bold.ttf") format("truetype");
+}
+
 input:focus, textarea:focus {
     outline: none;
 }

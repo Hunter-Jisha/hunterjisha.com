@@ -1,6 +1,6 @@
 <script>
     import { fly } from "svelte/transition"
-    import { appStore, maps, notes } from "./appVisibility"
+    import { appStore, experience, maps, notes } from "./appVisibility"
 
     export let visible
 
@@ -19,11 +19,17 @@
         visible = value
     })
 
+    experience.subscribe(value => 
+    {
+        visible = value
+    })
+
     function goHome()
     {
         notes.set(false)
         appStore.set(false)
         maps.set(false)
+        experience.set(false)
     }
 </script>
 

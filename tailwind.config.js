@@ -7,7 +7,9 @@ export default {
             sans: ["SFPro", 'sans-serif'],
             bold: "SFProBold",
             light: "SFProLight",
-            black: "SFProBlack"
+            black: "SFProBlack",
+            newyork: "NewYork",
+            newyorkbold: "NewYorkBold"
         }
     },
   },

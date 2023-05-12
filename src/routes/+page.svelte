@@ -5,16 +5,18 @@
     import IPadNewsWidget from "../lib/IPadNewsWidget.svelte";
     import IPadTimeAndDateWidget from "../lib/IPadTimeAndDateWidget.svelte";
     import IPadUpNextWidget from "../lib/IPadUpNextWidget.svelte";
-    import { notes, appStore, maps } from "../lib/appVisibility"
+    import { notes, appStore, maps, experience } from "../lib/appVisibility"
     import AppStore from "../lib/apps/AppStore.svelte";
+    import Experience from "../lib/apps/Experience.svelte";
     import Maps from "../lib/apps/Maps.svelte";
     import Notes from "../lib/apps/Notes.svelte";
 </script>
 
 <svelte:head>
     <link rel="preload" as="image" href="background.jpg"/>
+    <meta name="theme-color" content="#d30"/>
 </svelte:head>
-<div class="w-screen h-screen">
+<div class="fixed w-screen h-[calc(100dvh)] overflow-hidden bg-blue-500">
     <!--Background-->
     <div class="absolute w-full h-full top-0 left-0">
         <img src="/background.jpg" alt="background" class="w-full h-full object-cover">
@@ -29,9 +31,9 @@
         </div>
 
         <!--Split for Ipad Style-->
-        <div class="h-full w-full flex flex-row p-16 pb-0 gap-24">
+        <div class="h-full w-full flex flex-row md:p-16 pb-0 gap-24 ">
             <!--Left Widget Section-->
-            <div class="w-[40rem] flex flex-col gap-3">
+            <div class="w-[40rem] hidden lg:flex flex-col gap-3 ">
                 <IPadTimeAndDateWidget/>
 
                 <!--Spacer-->
@@ -42,13 +44,13 @@
                 <IPadNewsWidget/>
             </div>
 
-            <div class="w-full flex flex-row gap-24 flex-wrap content-start" >
+            <div class="w-full h-min gap-y-8 lg:gap-y-24 grid grid-cols-4 lg:grid-cols-6 grid-rows-3 mt-4" >
                 <AppIcon onclick={() => appStore.set(true)} iconPath="/appIcons/store.png" name="Projects"/>
                 <AppIcon onclick={() => notes.set(true)} iconPath="/appIcons/notes.png" name="About Me"/>
                 <AppIcon onclick={() => maps.set(true)} iconPath="/appIcons/findmy.png" name="Find Me"/>
                 <AppIcon onclick={() => window.open("https://github.com/hunter-jisha", '_blank')} iconPath="/appIcons/github.png" name="Github"/>
                 <AppIcon onclick={() => window.open("https://www.linkedin.com/in/ceo-of-software-engineering/", '_blank')} iconPath="/appIcons/linkedin.png" name="LinkedIn"/>
-                <AppIcon iconPath="/appIcons/books.png" name="Education"/>
+                <AppIcon onclick={() => experience.set(true)} iconPath="/appIcons/books.png" name="Experience"/>
                 <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.png" name="Email Me"/>
                 <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.png" name="Call Me"/>
                 <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.png" name="Text Me"/>
@@ -70,5 +72,6 @@
     <!--Apps-->
     <Notes/>
     <AppStore/>
+    <Experience/>
 </div>
 
