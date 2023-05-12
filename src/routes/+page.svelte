@@ -13,7 +13,6 @@
 </script>
 
 <svelte:head>
-    <link rel="preload" as="image" href="background.jpg"/>
     <meta name="theme-color" content="#d30"/>
 </svelte:head>
 <div class="fixed w-screen h-[calc(100dvh)] overflow-hidden bg-blue-500">
