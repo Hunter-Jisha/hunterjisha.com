@@ -15,7 +15,10 @@ const config = {
                 precompress: false,
                 strict: true
             }
-        )
+        ),
+        prerender: {
+            default: true
+        }
 	},
     preprocess: vitePreprocess()
 };

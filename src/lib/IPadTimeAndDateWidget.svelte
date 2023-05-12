@@ -38,6 +38,6 @@
 
 <div class="flex flex-col w-full text-white drop-shadow-md gap-2">
     <p class="text-8xl">{convertTo12HourFormat(time.getHours())}:{time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes()}</p>
-    <p class="text-3xl font-light">{daysOfWeek[time.getDay()]}, {months[time.getMonth()]} {time.getDate()}</p>
+    <p class="text-3xl">{daysOfWeek[time.getDay()]}, {months[time.getMonth()]} {time.getDate()}</p>
 
 </div>
