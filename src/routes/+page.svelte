@@ -19,7 +19,7 @@
 <div class="fixed w-screen h-[calc(100dvh)] overflow-hidden bg-blue-500">
     <!--Background-->
     <div class="absolute w-full h-full top-0 left-0">
-        <img src="/background.jpg" alt="background" class="w-full h-full object-cover">
+        <img src="/background.webp" alt="background" class="w-full h-full object-cover">
     </div>
 
     <!--Main Container-->
@@ -45,23 +45,23 @@
             </div>
 
             <div class="w-full h-min gap-y-8 lg:gap-y-24 grid grid-cols-4 lg:grid-cols-6 grid-rows-3 mt-4" >
-                <AppIcon onclick={() => appStore.set(true)} iconPath="/appIcons/store.png" name="Projects"/>
-                <AppIcon onclick={() => notes.set(true)} iconPath="/appIcons/notes.png" name="About Me"/>
-                <AppIcon onclick={() => maps.set(true)} iconPath="/appIcons/findmy.png" name="Find Me"/>
-                <AppIcon onclick={() => window.open("https://github.com/hunter-jisha", '_blank')} iconPath="/appIcons/github.png" name="Github"/>
-                <AppIcon onclick={() => window.open("https://www.linkedin.com/in/ceo-of-software-engineering/", '_blank')} iconPath="/appIcons/linkedin.png" name="LinkedIn"/>
-                <AppIcon onclick={() => experience.set(true)} iconPath="/appIcons/books.png" name="Experience"/>
-                <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.png" name="Email Me"/>
-                <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.png" name="Call Me"/>
-                <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.png" name="Text Me"/>
+                <AppIcon onclick={() => appStore.set(true)} iconPath="/appIcons/store.webp" name="Projects"/>
+                <AppIcon onclick={() => notes.set(true)} iconPath="/appIcons/notes.webp" name="About Me"/>
+                <AppIcon onclick={() => maps.set(true)} iconPath="/appIcons/findmy.webp" name="Find Me"/>
+                <AppIcon onclick={() => window.open("https://github.com/hunter-jisha", '_blank')} iconPath="/appIcons/github.webp" name="Github"/>
+                <AppIcon onclick={() => window.open("https://www.linkedin.com/in/ceo-of-software-engineering/", '_blank')} iconPath="/appIcons/linkedin.webp" name="LinkedIn"/>
+                <AppIcon onclick={() => experience.set(true)} iconPath="/appIcons/books.webp" name="Experience"/>
+                <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.webp" name="Email Me"/>
+                <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.webp" name="Call Me"/>
+                <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.webp" name="Text Me"/>
             </div>
         </div>
 
         <!--Bottom Bar-->
         <div class="flex-shrink-0 flex flex-row p-4 bg-white bg-opacity-30 backdrop-blur-md rounded-3xl gap-4 mb-6">
-            <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.png"/>
-            <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.png"/>
-            <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.png"/>
+            <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.webp"/>
+            <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.webp"/>
+            <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.webp"/>
         </div>
     </div>
 
