@@ -5,32 +5,32 @@
 
 @font-face {
     font-family: SFProBold;
-    src: url("fonts/SF-Pro-Text-Bold.otf") format("opentype");
+    src: url("/fonts/SF-Pro-Text-Bold.otf") format("opentype");
 }
 
 @font-face {
     font-family: SFPro;
-    src: url("fonts/SF-Pro-Text-Regular.otf") format("opentype");
+    src: url("/fonts/SF-Pro-Text-Regular.otf") format("opentype");
 }
 
 @font-face {
     font-family: SFProLight;
-    src: url("fonts/SF-Pro-Text-Light.otf") format("opentype");
+    src: url("/fonts/SF-Pro-Text-Light.otf") format("opentype");
 }
 
 @font-face {
     font-family: SFProBlack;
-    src: url("fonts/SF-Pro-Display-Black.otf") format("opentype");
+    src: url("/fonts/SF-Pro-Display-Black.otf") format("opentype");
 }
 
 @font-face {
     font-family: NewYork;
-    src: url("fonts/NewYorkMedium-Medium.ttf") format("truetype");
+    src: url("/fonts/NewYorkMedium-Medium.ttf") format("truetype");
 }
 
 @font-face {
     font-family: NewYorkBold;
-    src: url("fonts/NewYorkMedium-Bold.ttf") format("truetype");
+    src: url("/fonts/NewYorkMedium-Bold.ttf") format("truetype");
 }
 
 input:focus, textarea:focus {
