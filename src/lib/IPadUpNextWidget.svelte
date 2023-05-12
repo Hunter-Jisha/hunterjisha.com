@@ -4,7 +4,7 @@
 </script>
 <button onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} class="w-full flex flex-col p-4 bg-white bg-opacity-30 backdrop-blur-md rounded-2xl gap-4 pb-8">
     <div class="flex flex-row h-6 gap-4 items-center">
-        <img class="h-full aspect-square" src="appIcons/calendar.png" alt="calendar">
+        <img class="h-full aspect-square" src="appIcons/calendar.webp" alt="calendar">
         <p class="font-light text-lg text-stone-600">UP NEXT</p>
 
         <div class="h-full aspect-square -rotate-90 ml-auto text-stone-600">
