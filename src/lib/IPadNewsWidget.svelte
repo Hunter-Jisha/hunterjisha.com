@@ -11,17 +11,17 @@
         <div class="w-full flex flex-col gap-2 max-h-48 pr-3 overflow-y-scroll">
             <div class="flex flex-row gap-4">
                 <p class="font-bold text-lg">Tech Person Shocked by Amazing Portfolio Site</p>
-                <img class="w-20 h-20 flex-shrink-0 object-cover rounded-lg" src="shocked-man.jpg" alt="thumbnail">
+                <img class="w-20 h-20 flex-shrink-0 object-cover rounded-lg" src="shocked-man.webp" alt="thumbnail">
             </div>
     
             <div class="flex flex-row gap-4">
                 <p class="font-bold text-lg">Hunter Jisha Crowned "World's Best Software Engineer"</p>
-                <img class="w-20 h-20 flex-shrink-0 object-cover rounded-lg" src="crown.jpg" alt="thumbnail">
+                <img class="w-20 h-20 flex-shrink-0 object-cover rounded-lg" src="crown.webp" alt="thumbnail">
             </div>
     
             <div class="flex flex-row gap-4">
                 <p class="font-bold text-lg">Should you build your site to look like an iPhone? The answer is no.</p>
-                <img class="w-20 h-20 flex-shrink-0 object-cover rounded-lg" src="iphone.jpg" alt="thumbnail">
+                <img class="w-20 h-20 flex-shrink-0 object-cover rounded-lg" src="iphone.webp" alt="thumbnail">
             </div>
         </div>
     </div>
