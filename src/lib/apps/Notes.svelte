@@ -43,11 +43,11 @@
                     title: "About Me",
                     lastEdit: new Date(new Date() - 1000000000),
                     content: `Hi! I'm Hunter, a highly skilled and versatile Full Stack Developer 
-with a passion for crafting efficient and innovative solutions. With 5 years of experience 
+with a passion for crafting efficient and innovative solutions. With 7 years of experience 
 in the field, I have a strong foundation in both front-end and back-end development, 
 enabling me to seamlessly bridge the gap between design and functionality. 
 I thrive in collaborative environments, adept at working with cross-functional 
-teams to deliver high-quality, scalable web applications. Equipped with a deep 
+teams to deliver high-quality, scalable software applications. Equipped with a deep 
 understanding of various programming languages and frameworks, I consistently 
 stay abreast of the latest industry trends to ensure cutting-edge solutions that exceed 
 client expectations.`
