@@ -29,24 +29,24 @@
 </script>
 
 {#if visible}
-    <div transition:scale={{duration: 400, easing: easing.quadInOut}} class="absolute top-0 left-0 w-full h-full bg-white flex flex-col p-8 gap-4">
-        <p class="text-xl text-stone-500">{daysOfWeek[(new Date()).getDay()]}, {months[(new Date()).getMonth()].toUpperCase()} {new Date().getDate()}</p>
-        <div class="w-full h-12 flex flex-row justify-between items-center">
-            <p class="font-bold text-5xl">TODAY</p>
+    <div transition:scale={{duration: 400, easing: easing.quadInOut}} class="absolute top-0 left-0 w-full h-full bg-white flex flex-col p-4 md:p-8 gap-0 md:gap-4">
+        <p class="text-sm md:text-xl text-stone-500">{daysOfWeek[(new Date()).getDay()]}, {months[(new Date()).getMonth()].toUpperCase()} {new Date().getDate()}</p>
+        <div class="w-full h-12 flex flex-row justify-between items-end md:items-center">
+            <p class="font-bold text-4xl md:text-5xl">TODAY</p>
             <img class="h-full aspect-square rounded-full" src="blankProfile.png" alt="profile">
         </div>
         
-        <div class="w-full h-[0.5px] bg-stone-300 mb-4"></div>
+        <div class="w-full h-0 md:h-[0.5px] bg-stone-300 mb-4"></div>
 
         <!--Home Container-->
-        <div class="w-full h-[60rem] grid grid-cols-5 grid-rows-5 gap-12">
-            <div class="col-span-2 row-span-3 flex flex-col bg-blue-500 relative rounded-3xl p-6">
+        <div class="w-full flex flex-col md:h-[60rem] md:grid grid-cols-1 md:grid-cols-4 grid-rows-9 md:grid-rows-6 gap-4 md:gap-12 overflow-y-scroll md:overflow-hidden">
+            <div class="h-72 md:h-auto col-span-1 flex-shrink-0 md:col-span-2 row-span-3 flex flex-col bg-blue-500 relative rounded-3xl p-6 shadow-lg">
                 <p class="text-stone-300 front-thin text-md">MEET THE DEVELOPER</p>
                 <p class="text-white font-bold text-4xl">Hunter Jisha</p>
-                <img class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 " src="memoji.png" alt="memoji"/>
+                <img class="absolute bottom-0 md:left-1/2 right-0 -translate-x-1/2 h-3/5 " src="memoji.png" alt="memoji"/>
             </div>
 
-            <div class="relative col-span-1 row-span-3 flex flex-col rounded-3xl justify-end gap-4 overflow-hidden">
+            <div class="relative h-72 md:h-auto flex-shrink-0 col-span-2 row-span-3 flex flex-col rounded-3xl justify-end gap-4 overflow-hidden shadow-lg">
                 <!--Background- Image-->
                 <img class="absolute top-0 left-0 w-full h-full object-cover" src="syntextWallpaper.png" alt="syntext"/>
 
@@ -66,7 +66,7 @@
                 </div>  
             </div>
 
-            <div class="relative col-span-2 row-span-3 flex flex-col rounded-3xl justify-end gap-4 overflow-hidden">
+            <div class="relative h-72 md:h-auto flex-shrink-0 col-span-2 row-span-3 flex flex-col rounded-3xl justify-end gap-4 overflow-hidden shadow-lg">
                 <!--Background- Image-->
                 <img class="absolute top-0 left-0 w-full h-full object-cover" src="websiteScreenshot.png" alt="syntext"/>
 
@@ -85,6 +85,8 @@
                     </div>
                 </div>  
             </div>
+
+            <div class="h-32 flex-shrink-0 md:h-0 md:hidden"></div>
         </div>
     </div>
 {/if}
