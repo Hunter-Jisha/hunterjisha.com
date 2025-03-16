@@ -6,6 +6,7 @@
     import * as easing from "svelte/easing"
     import { onMount } from "svelte";
     import Trash from "../icons/Trash.svelte";
+	import Chevron from "../icons/Chevron.svelte";
     import FileAdd from "../icons/FileAdd.svelte";
     import alert from "../alertStore"
 
@@ -22,6 +23,7 @@
         selectedNoteIndex = index
         title = notesData[index].title
         content = notesData[index].content
+		menuOpen = false
     }
 
     let selectedNoteIndex = 0
@@ -29,6 +31,8 @@
     let content = ""
 
     let loaded = false
+
+	let menuOpen = false
 
     onMount(() => 
     {
@@ -105,7 +109,7 @@ client expectations.`
 {#if visible}
     <div transition:scale={{duration: 400, easing: easing.quadInOut}} class="absolute top-0 left-0 w-full h-full bg-white flex flex-row">
         <!--Left Container-->
-        <div class="w-96 flex-shrink-0 h-full flex flex-col gap-2 bg-stone-100 p-4">
+        <div class="{menuOpen ? "w-full p-4" : "w-0 p-0"} transition-all lg:w-96 lg:p-4 overflow-hidden flex-shrink-0 h-full flex flex-col gap-2 bg-stone-100">
             <p class="text-black font-bold text-3xl p-4">Notes</p>
 
             <div class="h-10 w-full flex flex-row items-center bg-stone-300 text-stone-500 rounded-xl">
@@ -129,6 +133,13 @@ client expectations.`
         <!--Right Container-->
         <div class="w-full h-full flex flex-col p-6 gap-3">
             <div class="flex flex-row w-full h-11 gap-8 justify-end items-center">
+				<button on:click={() => menuOpen = true} class="lg:hidden flex flex-row items-center text-yellow-500 mr-auto text-lg">
+					<div class="w-8 aspect-square rotate-90">
+						<Chevron/>
+					</div>
+					
+					<p>Notes</p>
+				</button>
                 <button on:click={() => deleteNote(selectedNoteIndex)} class="h-full rounded-full p-2 aspect-square text-yellow-500 transition-all duration-200 hover:bg-yellow-100">
                     <Trash/>
                 </button>
