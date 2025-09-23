@@ -53,8 +53,7 @@
                 <AppIcon onclick={() => window.open("mailto:hunterjisha@gmail.com", '_blank')} iconPath="appIcons/email.webp" name="Email Me"/>
                 <AppIcon onclick={() => window.open("tel:9033489781", '_blank')} iconPath="appIcons/phone.webp" name="Call Me"/>
                 <AppIcon onclick={() => window.open("sms:9033489781?&body=Hi%20Hunter%21%20I%27m%20reaching%20out%20for...", '_blank')} iconPath="appIcons/messages.webp" name="Text Me"/>
-				<AppIcon onclick={() => window.open("https://stocks.hunterjisha.com", '_blank')} iconPath="/appIcons/stocks.webp" name="AI Investing"/>
-				<AppIcon onclick={() => window.open("https://chess.hunterjisha.com", '_blank')} iconPath="/appIcons/chess.png" name="Comet Chess"/>
+				<AppIcon onclick={() => window.open("https://cubify.app", '_blank')} iconPath="/appIcons/cubify-app-icon.png" name="Cubify™"/>
             </div>
         </div>
 
