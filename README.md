@@ -1,38 +1,61 @@
-# create-svelte
+# hunterjisha.com
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Portfolio site built as a working iPadOS home screen. Vue 3 + Vite + Tailwind CSS v4.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Develop
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+bun install
+bun run dev
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Build
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run build     # static files in dist/
+bun run preview   # serve dist/ locally
 ```
 
-## Building
+The output in `dist/` is plain static files. Any web server can host it.
+The one server requirement is a fallback: unknown paths should serve `index.html`,
+since the site is a single page and uses hash links (`/#notes`, `/#projects`) for apps.
 
-To create a production version of your app:
+## Layout
 
-```bash
-npm run build
+```
+src/
+  App.vue                  home screen shell: wallpaper, status bar, dock, app launcher
+  apps.js                  app registry, open-app state, hash routing
+  clock.js                 date and time helpers
+  style.css                Tailwind entry, fonts, and the liquid glass classes
+  components/
+    AppIcon.vue            squircle icon with the iOS press and hover behaviour
+    AppWindow.vue          full-screen app frame with the home indicator
+    StatusBar.vue          time, Wi-Fi, battery
+    AlertDialog.vue        iOS alert sheet
+    widgets/               clock, up next, news
+    apps/                  Projects, Notes, Find Me, Experience
+public/
+  icons/                   app icons
+  media/                   wallpaper, logos, photos
+  fonts/                   SF Pro and New York, as woff2
 ```
 
-You can preview the production build with `npm run preview`.
+## Liquid glass
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+`.glass` and `.glass-dark` in `src/style.css` are the whole system. Each stacks three
+layers: the element blurs and brightens what sits behind it, `::before` paints a
+specular rim, and `::after` adds an interior sheen. Use `.glass` over light
+backgrounds and `.glass-dark` over photos.
+
+## Adding an app
+
+1. Add an entry to `apps` in `src/apps.js`. Give it an `href` to open a link, or leave
+   `href` off to open a full-screen app.
+2. For a full-screen app, add a component under `src/components/apps/` that wraps its
+   content in `<AppWindow>`, then register it in the `screens` map in `src/App.vue`.
+
+## Icons
+
+App icons are the current Apple icons, pulled from the iTunes Search API at 1024px and
+saved as 512px WebP. The Cubify icon is Hunter's own.
