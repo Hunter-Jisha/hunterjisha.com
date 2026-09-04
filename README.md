@@ -1,6 +1,6 @@
 # hunterjisha.com
 
-Portfolio site built as a working iPadOS home screen. Vue 3 + Vite + Tailwind CSS v4.
+Portfolio site built as a working iPadOS home screen. Vue 3 + TypeScript + Vite + Tailwind CSS v4.
 
 ## Develop
 
@@ -12,8 +12,9 @@ bun run dev
 ## Build
 
 ```bash
-bun run build     # static files in dist/
-bun run preview   # serve dist/ locally
+bun run build      # typechecks, then writes static files to dist/
+bun run preview    # serve dist/ locally
+bun run typecheck  # types only
 ```
 
 The output in `dist/` is plain static files. Any web server can host it.
@@ -25,8 +26,8 @@ since the site is a single page and uses hash links (`/#notes`, `/#projects`) fo
 ```
 src/
   App.vue                  home screen shell: wallpaper, status bar, dock, app launcher
-  apps.js                  app registry, open-app state, hash routing
-  clock.js                 date and time helpers
+  apps.ts                  app registry, open-app state, hash routing
+  clock.ts                 date and time helpers
   style.css                Tailwind entry, fonts, and the liquid glass classes
   components/
     AppIcon.vue            squircle icon with the iOS press and hover behaviour
@@ -50,12 +51,19 @@ backgrounds and `.glass-dark` over photos.
 
 ## Adding an app
 
-1. Add an entry to `apps` in `src/apps.js`. Give it an `href` to open a link, or leave
+1. Add an entry to `apps` in `src/apps.ts`. Give it an `href` to open a link, or leave
    `href` off to open a full-screen app.
 2. For a full-screen app, add a component under `src/components/apps/` that wraps its
    content in `<AppWindow>`, then register it in the `screens` map in `src/App.vue`.
 
-## Icons
+## Assets
 
 App icons are the current Apple icons, pulled from the iTunes Search API at 1024px and
-saved as 512px WebP. The Cubify icon is Hunter's own.
+saved as 512px WebP. Cubify and Comet Chess use their own logos.
+
+The wallpaper is the official iPadOS 27 "Celosia" light wallpaper. Apple ships it
+portrait only, so the landscape version is rotated and cropped to 16:10; phones get
+Apple's original portrait orientation.
+
+Fonts are SF Pro Text and SF Pro Display, subset to Latin and shipped as woff2. Four
+weights each: regular, medium, semibold, bold.

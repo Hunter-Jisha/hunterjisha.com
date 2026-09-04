@@ -20,8 +20,9 @@ const contact: { label: string; value: string; href: string }[] = [
         class="absolute inset-0 h-full w-full border-none"
         title="Dallas, Texas"
         loading="lazy"
+        allowfullscreen
         referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=-97.05%2C32.60%2C-96.55%2C32.94&layer=mapnik&marker=32.7767%2C-96.7970"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXjz7jSaANInJVXd9HWym0_4Igwk7EGSg&q=Dallas,+TX"
       ></iframe>
 
       <!-- Location card, the way Maps floats a sheet over the map -->
@@ -32,7 +33,7 @@ const contact: { label: string; value: string; href: string }[] = [
           <div class="flex items-center gap-3">
             <img src="/icons/findmy.webp" alt="" class="squircle h-11 w-11 shadow-md" />
             <div>
-              <p class="text-[20px] font-bold leading-tight text-black">Hunter Jisha</p>
+              <p class="text-[20px] font-semibold leading-tight text-black">Hunter Jisha</p>
               <p class="text-[14px] text-black/55">Dallas, Texas</p>
             </div>
           </div>
@@ -46,7 +47,7 @@ const contact: { label: string; value: string; href: string }[] = [
                 :target="item.href.startsWith('http') ? '_blank' : '_self'"
                 class="flex items-center justify-between gap-3 rounded-xl px-2.5 py-2 transition-colors hover:bg-black/6"
               >
-                <span class="text-[14px] font-bold text-black/45">{{ item.label }}</span>
+                <span class="text-[14px] font-medium text-black/45">{{ item.label }}</span>
                 <span class="truncate text-[15px] text-black">{{ item.value }}</span>
               </a>
             </li>

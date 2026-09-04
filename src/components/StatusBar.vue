@@ -6,7 +6,7 @@ const now = useNow()
 
 <template>
   <div
-    class="text-shadow-ios flex h-8 w-full shrink-0 items-center justify-between px-3 text-[13px] font-bold text-white sm:h-9 sm:px-5 sm:text-[14px]"
+    class="text-shadow-ios flex h-8 w-full shrink-0 items-center justify-between px-3 text-[13px] font-semibold text-white sm:h-9 sm:px-5 sm:text-[14px]"
   >
     <span class="tabular-nums">
       {{ dayName(now, true) }} {{ monthName(now, true) }} {{ now.getDate() }}

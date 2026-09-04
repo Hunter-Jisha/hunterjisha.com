@@ -87,7 +87,7 @@ function preview(note: Note) {
         :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
       >
         <div class="px-4 pb-2 pt-5">
-          <h1 class="px-2 font-display text-[32px] leading-none tracking-[-0.02em] text-black">
+          <h1 class="px-2 font-display text-[32px] font-bold leading-none tracking-[-0.02em] text-black">
             Notes
           </h1>
 
@@ -117,7 +117,7 @@ function preview(note: Note) {
             "
             @click="selectNote(note.index)"
           >
-            <span class="truncate text-[15px] font-bold">{{ note.title || 'New Note' }}</span>
+            <span class="truncate text-[15px] font-semibold">{{ note.title || 'New Note' }}</span>
             <span
               class="truncate text-[13px]"
               :class="selected === note.index ? 'text-white/85' : 'text-black/45'"
@@ -183,7 +183,7 @@ function preview(note: Note) {
           <input
             v-model="current.title"
             type="text"
-            class="w-full shrink-0 bg-transparent font-display text-[28px] leading-tight tracking-[-0.02em] text-black"
+            class="w-full shrink-0 bg-transparent font-display text-[28px] font-bold leading-tight tracking-[-0.02em] text-black"
           />
           <textarea
             v-model="current.content"

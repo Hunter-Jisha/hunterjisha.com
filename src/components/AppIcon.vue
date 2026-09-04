@@ -2,9 +2,10 @@
 import { launch } from '../apps'
 import type { App, ScreenId } from '../apps'
 
-const props = withDefaults(defineProps<{ app: App; showLabel?: boolean }>(), {
-  showLabel: true,
-})
+const props = withDefaults(
+  defineProps<{ app: App; showLabel?: boolean; size?: 'home' | 'dock' }>(),
+  { showLabel: true, size: 'home' },
+)
 
 function activate(event: MouseEvent) {
   const href = props.app.href
@@ -23,7 +24,12 @@ function activate(event: MouseEvent) {
     @click="activate"
   >
     <span
-      class="icon-tile relative block aspect-square w-[3.75rem] sm:w-[4.25rem] lg:w-20"
+      class="icon-tile relative block aspect-square"
+      :class="
+        size === 'dock'
+          ? 'w-[3.25rem] sm:w-14 lg:w-[3.75rem]'
+          : 'w-[3.75rem] sm:w-[4.25rem] lg:w-[4.5rem]'
+      "
     >
       <img
         :src="app.icon"
@@ -45,28 +51,28 @@ function activate(event: MouseEvent) {
 </template>
 
 <style scoped>
+/*
+  iPadOS does not lift an icon on hover. The pointer settles onto it and the icon
+  dips when pressed, so that is all this does.
+*/
 .icon-tile {
-  filter: drop-shadow(0 8px 16px rgb(0 0 0 / 0.28));
-  transition: transform 0.28s var(--ease-spring);
-}
-.group:hover .icon-tile {
-  transform: translateY(-3px) scale(1.05);
+  filter: drop-shadow(0 6px 14px rgb(0 0 0 / 0.22));
+  transition: transform 0.22s var(--ease-ios);
 }
 .group:active .icon-tile {
-  transform: scale(0.9);
-  transition-duration: 0.12s;
+  transform: scale(0.92);
+  transition-duration: 0.1s;
 }
 
 .icon-gloss {
-  background:
-    linear-gradient(
-      160deg,
-      rgb(255 255 255 / 0.32) 0%,
-      rgb(255 255 255 / 0.08) 26%,
-      rgb(255 255 255 / 0) 48%
-    );
+  background: linear-gradient(
+    160deg,
+    rgb(255 255 255 / 0.3) 0%,
+    rgb(255 255 255 / 0.07) 26%,
+    rgb(255 255 255 / 0) 48%
+  );
   box-shadow:
-    inset 0 0 0 0.5px rgb(255 255 255 / 0.28),
-    inset 0 1px 1px -0.5px rgb(255 255 255 / 0.55);
+    inset 0 0 0 0.5px rgb(255 255 255 / 0.26),
+    inset 0 1px 1px -0.5px rgb(255 255 255 / 0.5);
 }
 </style>

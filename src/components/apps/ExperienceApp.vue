@@ -93,16 +93,16 @@ function select(id: TabId) {
           </button>
         </div>
 
-        <TransitionGroup
-          tag="div"
-          name="card"
-          class="mx-auto my-auto grid w-full max-w-[68rem] grid-cols-2 gap-x-6 gap-y-9 px-6 py-10 sm:grid-cols-3 sm:gap-x-9 lg:grid-cols-4 lg:px-12 lg:pt-12 xl:grid-cols-5"
+        <Transition name="cards" mode="out-in">
+        <div
+          :key="tab"
+          class="mx-auto grid w-full max-w-[68rem] grid-cols-2 gap-x-6 gap-y-9 px-6 pb-16 pt-2 sm:grid-cols-3 sm:gap-x-9 lg:grid-cols-4 lg:px-12 lg:pt-10 xl:grid-cols-5"
         >
           <figure
             v-for="(entry, index) in entries[tab]"
-            :key="tab + entry.title + entry.years"
-            class="flex flex-col items-center gap-3 text-center"
-            :style="{ '--delay': `${index * 70}ms` }"
+            :key="entry.title + entry.years"
+            class="card flex flex-col items-center gap-3 text-center"
+            :style="{ '--delay': `${index * 60}ms` }"
           >
             <div
               class="flex aspect-3/4 w-full items-center justify-center overflow-hidden rounded-[18px] p-6 shadow-[0_16px_34px_-10px_rgba(0,0,0,0.45)]"
@@ -116,37 +116,46 @@ function select(id: TabId) {
                 :class="entry.invert ? 'invert' : ''"
                 loading="lazy"
               />
-              <span v-else class="font-display text-[44px] leading-none text-[#04aa6b]">W3</span>
+              <span v-else class="font-display text-[44px] font-bold leading-none text-[#04aa6b]">W3</span>
             </div>
 
             <figcaption class="flex flex-col">
-              <span class="text-[16px] font-bold leading-tight text-black">{{ entry.title }}</span>
+              <span class="text-[16px] font-semibold leading-tight text-black">{{ entry.title }}</span>
               <span class="text-[14px] text-neutral-500">{{ entry.org }}</span>
               <span class="text-[13px] text-neutral-400">{{ entry.years }}</span>
             </figcaption>
           </figure>
-        </TransitionGroup>
+        </div>
+        </Transition>
       </div>
     </div>
   </AppWindow>
 </template>
 
 <style scoped>
-.card-enter-active {
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s var(--ease-ios);
-  transition-delay: var(--delay);
+/*
+  The whole grid fades out, then the new one fades in with its cards staggered.
+  Animating the cards individually would pull the leaving ones out of the grid and
+  let them stretch across the screen mid-transition.
+*/
+.cards-enter-active,
+.cards-leave-active {
+  transition: opacity 0.18s ease;
 }
-.card-enter-from {
+.cards-enter-from,
+.cards-leave-to {
   opacity: 0;
-  transform: translateY(40px);
 }
-.card-leave-active {
-  transition: opacity 0.15s ease;
-  position: absolute;
+
+.card {
+  animation: card-in 0.45s var(--ease-ios) both;
+  animation-delay: var(--delay);
 }
-.card-leave-to {
-  opacity: 0;
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
 }
 </style>

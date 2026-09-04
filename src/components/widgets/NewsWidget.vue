@@ -19,7 +19,7 @@ const stories: { headline: string; image: string }[] = [
   <div class="glass rounded-[26px] p-4">
     <div class="relative z-10 flex items-center gap-2.5">
       <img src="/icons/news.webp" alt="" class="squircle h-6 w-6" />
-      <p class="text-[13px] font-bold uppercase tracking-wide text-black/45">News</p>
+      <p class="text-[13px] font-semibold uppercase tracking-wide text-black/55">News</p>
     </div>
 
     <div class="relative z-10 mt-3">
@@ -28,7 +28,7 @@ const stories: { headline: string; image: string }[] = [
 
       <ul class="mt-3 flex max-h-52 flex-col gap-3 overflow-y-auto pr-1">
         <li v-for="story in stories" :key="story.headline" class="flex items-start gap-3">
-          <p class="flex-1 text-[15px] font-bold leading-snug text-black">
+          <p class="flex-1 text-[15px] font-semibold leading-snug text-black">
             {{ story.headline }}
           </p>
           <img

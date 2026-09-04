@@ -22,7 +22,7 @@ const screens: Record<ScreenId, Component> = {
 }
 const screenIds = Object.keys(screens) as ScreenId[]
 
-const homeApps = apps.filter((app) => !dockApps.includes(app.id))
+// Every app sits on the home screen. The dock repeats a few of them, as iPadOS does.
 const dock: App[] = dockApps.map((id) => apps.find((app) => app.id === id)!)
 
 const originStyle = computed(() => ({
@@ -50,6 +50,7 @@ onUnmounted(() => {
   <main class="relative h-dvh w-screen overflow-hidden">
     <!-- Wallpaper -->
     <picture>
+      <source media="(orientation: portrait)" srcset="/media/wallpaper-portrait.webp" type="image/webp" />
       <source srcset="/media/wallpaper.webp" type="image/webp" />
       <img
         src="/media/wallpaper.jpg"
@@ -69,33 +70,34 @@ onUnmounted(() => {
       <StatusBar />
 
       <div
-        class="flex min-h-0 flex-1 flex-col gap-8 overflow-y-auto px-6 pb-4 pt-4 lg:flex-row lg:items-center lg:justify-center lg:gap-16 lg:overflow-hidden lg:px-12 lg:pt-0 xl:gap-24"
+        class="flex min-h-0 flex-1 flex-col gap-8 overflow-y-auto px-6 pb-4 pt-3 lg:flex-row lg:items-start lg:justify-center lg:gap-10 lg:overflow-hidden lg:px-10 lg:pt-6 xl:gap-14 xl:px-14"
       >
-        <!-- Widget column. Beside the icons on iPad, stacked below them on phones. -->
-        <aside
-          class="order-2 flex w-full shrink-0 flex-col gap-4 lg:order-1 lg:w-[24rem] xl:w-[26rem]"
-        >
-          <div class="hidden lg:block">
-            <ClockWidget />
-          </div>
-          <div class="hidden h-2 lg:block"></div>
+        <!-- Widget column, iPad only -->
+        <aside class="hidden shrink-0 flex-col gap-3 lg:flex lg:w-[21rem] xl:w-[23rem]">
+          <ClockWidget />
           <UpNextWidget />
           <NewsWidget />
         </aside>
 
         <!-- App grid -->
         <div
-          class="order-1 grid w-full grid-cols-4 justify-items-center gap-x-3 gap-y-7 sm:gap-x-6 sm:gap-y-9 lg:order-2 lg:w-auto lg:max-w-[34rem] lg:gap-x-8 lg:gap-y-11 lg:self-center"
+          class="grid w-full grid-cols-4 justify-items-center gap-x-3 gap-y-6 sm:gap-x-5 sm:gap-y-8 lg:w-auto lg:max-w-[44rem] lg:flex-1 lg:grid-cols-6 lg:gap-x-5 lg:gap-y-9"
         >
-          <AppIcon v-for="app in homeApps" :key="app.id" :app="app" />
+          <AppIcon v-for="app in apps" :key="app.id" :app="app" />
         </div>
       </div>
 
       <!-- Dock -->
-      <div class="flex shrink-0 justify-center px-4 pb-4 sm:pb-6">
-        <div class="glass flex items-center gap-3 rounded-[28px] p-3 sm:gap-4 sm:rounded-[32px]">
-          <div class="relative z-10 flex items-center gap-3 sm:gap-4">
-            <AppIcon v-for="app in dock" :key="app.id" :app="app" :show-label="false" />
+      <div class="flex shrink-0 justify-center px-4 pb-3 sm:pb-5">
+        <div class="glass rounded-[24px] p-2 sm:rounded-[26px] sm:p-2.5">
+          <div class="relative z-10 flex items-center gap-2 sm:gap-2.5">
+            <AppIcon
+              v-for="app in dock"
+              :key="app.id"
+              :app="app"
+              :show-label="false"
+              size="dock"
+            />
           </div>
         </div>
       </div>

@@ -54,11 +54,11 @@ function open(project: Project) {
     <div class="flex h-full flex-col overflow-y-auto bg-[#f2f2f7]">
       <header class="sticky top-0 z-20 glass-panel px-5 pb-3 pt-5 sm:px-9 sm:pt-7">
         <div class="mx-auto w-full max-w-[72rem]">
-        <p class="text-[13px] font-bold uppercase tracking-wide text-neutral-500">
+        <p class="text-[13px] font-semibold uppercase tracking-wide text-neutral-500">
           {{ dayName(now) }}, {{ monthName(now) }} {{ now.getDate() }}
         </p>
         <div class="flex items-end justify-between">
-          <h1 class="font-display text-[34px] leading-tight tracking-[-0.02em] text-black sm:text-[42px]">
+          <h1 class="font-display text-[34px] font-bold leading-tight tracking-[-0.02em] text-black sm:text-[42px]">
             Today
           </h1>
           <img
@@ -76,10 +76,10 @@ function open(project: Project) {
           class="relative flex h-72 flex-col overflow-hidden rounded-[28px] p-6 shadow-[0_14px_40px_-14px_rgba(0,0,0,0.4)] sm:h-80 lg:col-span-2 lg:h-[19rem]"
           style="background: linear-gradient(135deg, #0a84ff 0%, #0060df 55%, #4b2ecc 100%)"
         >
-          <p class="relative z-10 text-[13px] font-bold uppercase tracking-wide text-white/70">
+          <p class="relative z-10 text-[13px] font-semibold uppercase tracking-wide text-white/70">
             Meet the developer
           </p>
-          <p class="relative z-10 font-display text-[34px] leading-tight text-white sm:text-[44px]">
+          <p class="relative z-10 font-display text-[34px] font-bold leading-tight text-white sm:text-[44px]">
             Hunter Jisha
           </p>
           <p class="relative z-10 mt-1 max-w-sm text-[15px] text-white/85">
@@ -110,7 +110,7 @@ function open(project: Project) {
           <div
             v-else
             class="absolute inset-0"
-            style="background: linear-gradient(140deg, #ff9f0a 0%, #ff375f 50%, #bf5af2 100%)"
+            style="background: linear-gradient(140deg, #30d5c8 0%, #0a84ff 50%, #5e5ce6 100%)"
           ></div>
 
           <div class="glass-dark relative z-10 m-3 flex items-center gap-3.5 rounded-[22px] p-3">
@@ -122,7 +122,7 @@ function open(project: Project) {
             </div>
 
             <div class="relative z-10 min-w-0 flex-1">
-              <p class="truncate text-[17px] font-bold text-white">{{ project.name }}</p>
+              <p class="truncate text-[17px] font-semibold text-white">{{ project.name }}</p>
               <p class="truncate text-[14px] text-white/70">{{ project.tagline }}</p>
             </div>
 
