@@ -141,7 +141,6 @@
     */
     background-color: rgb(255 255 255 / 0.17);
     backdrop-filter: blur(8px) saturate(210%) brightness(1.22);
-    -webkit-backdrop-filter: blur(8px) saturate(210%) brightness(1.22);
     box-shadow:
       inset 0 0 0 0.5px rgb(255 255 255 / 0.55),
       inset 0 1.5px 1px -1px rgb(255 255 255 / 0.9),
@@ -154,7 +153,6 @@
   .glass-dark {
     background-color: rgb(16 16 20 / 0.26);
     backdrop-filter: blur(10px) saturate(180%) brightness(0.82);
-    -webkit-backdrop-filter: blur(10px) saturate(180%) brightness(0.82);
     box-shadow:
       inset 0 0 0 0.5px rgb(255 255 255 / 0.2),
       inset 0 1.5px 1px -1px rgb(255 255 255 / 0.5),
@@ -179,13 +177,14 @@
       rgb(255 255 255 / 0.3) 78%,
       rgb(255 255 255 / 0.8) 100%
     );
-    -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
+    /*
+      Cut the middle out so only a one-pixel ring of the gradient shows.
+      Write the standard properties only. Lightning CSS adds the -webkit- forms;
+      hand-writing them makes it prune the standard ones during minification.
+    */
     mask:
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
 
@@ -217,7 +216,6 @@
   .glass-panel {
     background-color: rgb(255 255 255 / 0.72);
     backdrop-filter: blur(36px) saturate(190%);
-    -webkit-backdrop-filter: blur(36px) saturate(190%);
   }
 }
 
