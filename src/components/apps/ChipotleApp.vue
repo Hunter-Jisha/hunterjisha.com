@@ -152,7 +152,7 @@ onUnmounted(() => {
             class="rounded-full bg-[#a81612] px-7 py-3.5 text-[17px] font-semibold shadow-[0_8px_24px_rgba(168,22,18,0.45)] transition-transform active:scale-95"
             @click="start"
           >
-            Find a burrito
+            Locate
           </button>
           <p v-else-if="status === 'locating'" class="animate-pulse text-[15px] text-[#f6ece0]/60">Locating…</p>
           <p v-else class="max-w-[14rem] text-center text-[15px] leading-snug text-[#f6ece0]/75">{{ error }}</p>
