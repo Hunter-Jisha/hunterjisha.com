@@ -35,8 +35,11 @@ src/
     StatusBar.vue          time, Wi-Fi, battery
     AlertDialog.vue        iOS alert sheet
     widgets/               clock, up next, news
-    apps/                  Projects, Notes, Find Me, Experience
+    apps/                  Projects, Notes, Find Me, Experience, Chipotle
+scripts/
+  update-chipotles.ts      refreshes the Chipotle store list
 public/
+  data/chipotles.json      every US Chipotle as [lat, lon, address]
   icons/                   app icons
   media/                   wallpaper, logos, photos
   fonts/                   SF Pro and New York, as woff2
@@ -55,6 +58,22 @@ backgrounds and `.glass-dark` over photos.
    `href` off to open a full-screen app.
 2. For a full-screen app, add a component under `src/components/apps/` that wraps its
    content in `<AppWindow>`, then register it in the `screens` map in `src/App.vue`.
+
+## Chipotle compass
+
+The Chipotle app points an arrow at the nearest US Chipotle and shows the distance.
+Everything runs in the browser: it reads the phone's location and compass, then
+searches `public/data/chipotles.json` for the closest store.
+
+The store list comes from [All The Places](https://www.alltheplaces.xyz/), an open
+dataset that scrapes store finders weekly and is released under CC-0. To refresh it:
+
+```bash
+bun run update-chipotles
+```
+
+Location only works over HTTPS. iPhones ask for compass access after the user taps
+the start button. Devices with no compass, like laptops, show the arrow with north up.
 
 ## Assets
 

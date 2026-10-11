@@ -5,6 +5,7 @@ export type AppId =
   | 'notes'
   | 'findme'
   | 'experience'
+  | 'chipotle'
   | 'github'
   | 'linkedin'
   | 'cubify'
@@ -15,7 +16,7 @@ export type AppId =
 // A screen app opens full screen; a link app has an href and opens in a new tab.
 export type App = { id: AppId; name: string; icon: string; href?: string }
 
-export type ScreenId = 'projects' | 'notes' | 'findme' | 'experience'
+export type ScreenId = 'projects' | 'notes' | 'findme' | 'experience' | 'chipotle'
 
 // Which full-screen app is open, and the icon it was launched from so the
 // open animation can grow out of that icon the way iOS does.
@@ -56,6 +57,7 @@ export const apps: App[] = [
   { id: 'notes', name: 'About Me', icon: '/icons/notes.webp' },
   { id: 'findme', name: 'Find Me', icon: '/icons/findmy.webp' },
   { id: 'experience', name: 'Experience', icon: '/icons/books.webp' },
+  { id: 'chipotle', name: 'Chipotle', icon: '/icons/chipotle.webp' },
   { id: 'github', name: 'Github', icon: '/icons/github.webp', href: 'https://github.com/hunter-jisha' },
   {
     id: 'linkedin',

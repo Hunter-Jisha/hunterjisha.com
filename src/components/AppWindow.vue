@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { goHome } from '../apps'
+
+defineProps<{ lightIndicator?: boolean }>()
 </script>
 
 <template>
@@ -13,7 +15,8 @@ import { goHome } from '../apps'
       @click="goHome"
     >
       <span
-        class="h-[5px] w-32 rounded-full bg-black/35 transition-colors duration-200 hover:bg-black/60"
+        class="h-[5px] w-32 rounded-full transition-colors duration-200"
+        :class="lightIndicator ? 'bg-white/45 hover:bg-white/70' : 'bg-black/35 hover:bg-black/60'"
       ></span>
     </button>
   </section>
