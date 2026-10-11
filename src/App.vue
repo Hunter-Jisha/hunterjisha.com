@@ -13,12 +13,14 @@ import ProjectsApp from './components/apps/ProjectsApp.vue'
 import NotesApp from './components/apps/NotesApp.vue'
 import FindMeApp from './components/apps/FindMeApp.vue'
 import ExperienceApp from './components/apps/ExperienceApp.vue'
+import ChipotleApp from './components/apps/ChipotleApp.vue'
 
 const screens: Record<ScreenId, Component> = {
   projects: ProjectsApp,
   notes: NotesApp,
   findme: FindMeApp,
   experience: ExperienceApp,
+  chipotle: ChipotleApp,
 }
 const screenIds = Object.keys(screens) as ScreenId[]
 
